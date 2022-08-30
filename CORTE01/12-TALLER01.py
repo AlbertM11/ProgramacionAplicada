@@ -45,4 +45,27 @@ def f_stat (l_valores):
 
 ## 5. BONO (0.5)
 #TODO: realizar la verificación del punto aterior haciendo uso de la función assert (pytest)
+import numpy as np #Importamos la libreria numpy.
+l_valores = [9,2, 9, 4, 5, 1, 8, 7, 8, 8, 9, 10,3]#Creamos una lista con los valores.
+def f_stat(l_valores):#Creamos una funcion para la media en el range de la lista.
+    s_mean, s_median,str_ordn,int_contadora,int_divisor,str_ordn = 0, 0, 0, 0,len(l_valores),np.sort(l_valores)#Definimos las variables.
+    s_mean=sum(l_valores)/int_divisor
+    half=int_divisor//2#Declaramos divisor.
+    if not int_divisor%2:#Iniciamos condicion.
+        s_median=(l_valores[half-1]+l_valores[half])/2#Generamos el calculo en caso de que se cumpla la condicion.
+    else:#De lo contrario.
+        s_median=l_valores[half]#Generamos solucion en caso que no se cumpla.
+    def mode(l_valores):#Creamos funcion para moda en el range de la lista.
+      frequency = {}#Creamos diccionario para guardar las variables.
+      for value in l_valores:#Iniciamos ciclo para value en el range de la lista.
+          frequency[value] = frequency.get(value, 0) + 1#Iniciamos la funcion frequency para value.
+      most_frequent = max(frequency.values())
+      s_moda = [key for key, value in frequency.items()#Inicicamos ciclo para moda.
+                        if value == most_frequent]#Creamos condicion para el valor de moda
+      return s_moda #Retornamos la funcion.
+    return (f"La media es:{s_mean}, y la mediana es: {s_median}, y la moda es: {mode(l_valores)}")#Retornamos la media de cada uno.
+print(f_stat(l_valores))#Imprimimos la funcion y la lista.
 
+En compañia con:
+    Juan David Panadero.
+    Maria Alejandra Leyton.
