@@ -17,6 +17,13 @@ se les darán multiples funciones, así como la documentación correspondiente
 #   Si la pareja de conejos produce una nueva pareja cada mes y la nueva pareja
 #   tarda un mes más en ser también productiva, ¿cuántos pares de conejos podrá
 #   poner a la venta el granjero al cabo de un año?
+#Solucion:
+def f_contarconejos(parejas):
+    if parejas<2:#si el numero de parejas es menor a 2
+        return parejas #el numero de parejas se retorna y almacena
+    parejas_tot= f_contarconejos(parejas-1)+f_contarconejos(parejas-2)#las parejas totales es igual a la suma de los anteriores 2 valores
+    return parejas_tot #imprime el valor de las parejas totales
+print(f_contarconejos(13)) #para un año el resultado sera resultado=pares de conejos
 
 ## Ejercicio objetos.
 # TODO: 1. Cree un archivo, Taller donde llevará acabo el codigo principal
