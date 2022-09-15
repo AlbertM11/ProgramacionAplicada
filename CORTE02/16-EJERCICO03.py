@@ -19,11 +19,11 @@ se les darán multiples funciones, así como la documentación correspondiente
 #   poner a la venta el granjero al cabo de un año?
 #Solucion:
 def f_contarconejos(parejas):
-    if parejas<2:#si el numero de parejas es menor a 2
-        return parejas #el numero de parejas se retorna y almacena
-    parejas_tot= f_contarconejos(parejas-1)+f_contarconejos(parejas-2)#las parejas totales es igual a la suma de los anteriores 2 valores
-    return parejas_tot #imprime el valor de las parejas totales
-print(f_contarconejos(13)) #para un año el resultado sera resultado=pares de conejos
+    if parejas<2:#En caso de que el numero de parejas sea menor que 2.
+        return parejas #El numero de parejas se almacena y retorna.
+    parejas_tot= f_contarconejos(parejas-1)+f_contarconejos(parejas-2)#Las parejas totales son la suma de las 2 anterirores.
+    return parejas_tot #Impimimos valor de parejas totales.
+print(f_contarconejos(13))#Para un año el resultado sera:
 
 ## Ejercicio objetos.
 # TODO: 1. Cree un archivo, Taller donde llevará acabo el codigo principal
